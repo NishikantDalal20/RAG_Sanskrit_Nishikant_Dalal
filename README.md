@@ -1,4 +1,4 @@
-# Sanskrit Document RAG (CPU-only)
+# Sanskrit Document Retrieval-Augmented Generation (RAG) System
 
 ## Project Overview
 
