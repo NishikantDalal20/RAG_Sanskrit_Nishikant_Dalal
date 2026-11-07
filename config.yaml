@@ -1,0 +1,34 @@
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  index_dir: index
+  model_dir: models
+  eval_file: data/eval_questions.json
+
+preprocess:
+  chunk_sentences: 3        # sentences per chunk
+  overlap_sentences: 1      # sentences shared with the previous chunk
+
+query:
+  default_scheme: itrans    # how Roman input is read: itrans | hk | iast | slp1
+
+retrieval:
+  embedding_model: intfloat/multilingual-e5-small
+  query_prefix: "query: "
+  passage_prefix: "passage: "
+  mode: hybrid              # dense | bm25 | hybrid
+  top_k: 3
+  candidate_pool: 10        # how many hits each method contributes before fusion
+  rrf_k: 60
+  #dense_weight: 1.0
+  dense_weight: 0.3
+  bm25_weight: 1.0
+  ngram: 3                  # character n-gram size for BM25
+
+generation:
+  repo_id: Qwen/Qwen2.5-1.5B-Instruct-GGUF
+  filename: qwen2.5-1.5b-instruct-q4_k_m.gguf
+  n_ctx: 2048
+  max_tokens: 256
+  temperature: 0.2
+  n_threads: 0              # 0 = use all CPU cores

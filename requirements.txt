@@ -1,0 +1,12 @@
+python-docx>=1.1.0
+PyYAML>=6.0
+numpy>=1.26
+sentence-transformers>=3.0
+faiss-cpu>=1.8.0
+rank-bm25>=0.2.2
+indic-transliteration>=2.3.50
+llama-cpp-python>=0.2.90
+huggingface_hub>=0.24
+psutil>=5.9
+tqdm>=4.66
+gradio>=4.40
